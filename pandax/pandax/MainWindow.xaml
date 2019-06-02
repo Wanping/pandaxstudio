@@ -118,6 +118,7 @@
                             <MenuItem Header="Apache"/>
                             <MenuItem Header="Mysql"/>
                             <MenuItem Header="PHP"/>
+                            <MenuItem Header="PandaX Studio"/>
                         </MenuItem>
                         <MenuItem x:Name="config_manager"  Header="配置管理"  >
                             <MenuItem Header="Apache"/>
@@ -147,13 +148,21 @@
 
 
                         <Separator/>
+                        <Button x:Name="log_pandax" Content="&#xf1da;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" FontSize="10" ToolTip="执行日志" Click="Log_pandax_Click"/>
+
                         <Button Content="&#xf3ed;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" FontSize="10" ToolTip="备份管理" />
                         <Button Content="&#xf013;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" FontSize="10" ToolTip="设置" Click="Current_option_Click"/>
                         <Separator/>
-                        <ComboBox  Height="25" Text="PHP" HorizontalContentAlignment="Right" FontFamily="Microsoft YaHei UI" BorderBrush="{x:Null}" Margin="0" Width="109.427" FontSize="10" IsEditable="True" HorizontalAlignment="Left" Background="#FFEEEEF2" >
-                            <ComboBoxItem Content="PHP" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left"/>
-                            <ComboBoxItem Content="Python" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left"/>
+                        
+                        <ComboBox  Height="25"   FontFamily="Microsoft YaHei UI" Margin="0" Width="91" SelectedIndex="0" HorizontalAlignment="Center"  >
+                           
+                                <ComboBoxItem Content="PHP7.3" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="PHP7.2" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="PHP7.1" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="PHP5.6" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left"/>
+                           
                         </ComboBox>
+                        
 
                     </ToolBar>
                     <ToolBar HorizontalAlignment="Right" ToolBarTray.IsLocked="True" Background="{x:Null}" >

@@ -26,6 +26,33 @@ namespace pandax
             {
                 MessageBox.Show("程序异常，数据库文件不存在!", "注意", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+            //记录操作日志
+            string log_pandax = path_app + "/pandax.log";
+            string log_time = DateTime.Now.ToString();
+            string log_appname = "pandax";
+            string log_event = "pandax studio开始运行";
+
+            if (!File.Exists(log_pandax))
+            {
+
+                File.Create(log_pandax);
+
+            }
+
+            try
+            {
+                StreamWriter sw = new StreamWriter(log_pandax, true);
+                sw.WriteLine(log_time + "\t" + log_appname + "\t" + log_event);
+                sw.Close();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+            
         }
 
         string path_app = AppDomain.CurrentDomain.BaseDirectory;
@@ -429,5 +456,35 @@ namespace pandax
             
         }
 
+        private void Log_pandax_Click(object sender, RoutedEventArgs e)
+        {
+            string log_pandax = path_app + "/pandax.log";
+            string log_time= DateTime.Now.ToString();
+            string log_appname = "pandax";
+            string log_event = "打开日志文件pandax.log";
+
+            StreamWriter sw = new StreamWriter(log_pandax,true);
+            sw.WriteLine(log_time+"\t"+ log_appname+"\t"+ log_event);
+            sw.Close();
+
+            if (!File.Exists(log_pandax))
+            {
+                
+                File.Create(log_pandax);
+                
+            }
+
+            
+
+            try
+            {
+                Process.Start(log_pandax);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

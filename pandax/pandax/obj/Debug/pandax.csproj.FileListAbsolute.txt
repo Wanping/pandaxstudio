@@ -59,3 +59,45 @@ D:\PandaX\pandax\pandax\obj\Debug\pandax.csproj.CoreCompileInputs.cache
 D:\PandaX\pandax\pandax\obj\Debug\pandax.csproj.CopyComplete
 D:\PandaX\pandax\pandax\obj\Debug\pandax.exe
 D:\PandaX\pandax\pandax\obj\Debug\pandax.pdb
+D:\pandaxstudio\pandax\pandax\bin\Debug\PandaX Studio.exe.config
+D:\pandaxstudio\pandax\pandax\bin\Debug\PandaX Studio.exe
+D:\pandaxstudio\pandax\pandax\bin\Debug\PandaX Studio.pdb
+D:\pandaxstudio\pandax\pandax\bin\Debug\EntityFramework.dll
+D:\pandaxstudio\pandax\pandax\bin\Debug\EntityFramework.SqlServer.dll
+D:\pandaxstudio\pandax\pandax\bin\Debug\HandyControl.dll
+D:\pandaxstudio\pandax\pandax\bin\Debug\System.Data.SQLite.dll
+D:\pandaxstudio\pandax\pandax\bin\Debug\System.Data.SQLite.EF6.dll
+D:\pandaxstudio\pandax\pandax\bin\Debug\System.Data.SQLite.Linq.dll
+D:\pandaxstudio\pandax\pandax\bin\Debug\EntityFramework.xml
+D:\pandaxstudio\pandax\pandax\bin\Debug\EntityFramework.SqlServer.xml
+D:\pandaxstudio\pandax\pandax\bin\Debug\HandyControl.pdb
+D:\pandaxstudio\pandax\pandax\bin\Debug\HandyControl.xml
+D:\pandaxstudio\pandax\pandax\bin\Debug\System.Data.SQLite.xml
+D:\pandaxstudio\pandax\pandax\bin\Debug\System.Data.SQLite.dll.config
+D:\pandaxstudio\pandax\pandax\bin\Debug\en\HandyControl.resources.dll
+D:\pandaxstudio\pandax\pandax\obj\Debug\pandax.csprojAssemblyReference.cache
+D:\pandaxstudio\pandax\pandax\obj\Debug\Appstore.g.cs
+D:\pandaxstudio\pandax\pandax\obj\Debug\Community.g.cs
+D:\pandaxstudio\pandax\pandax\obj\Debug\Documents.g.cs
+D:\pandaxstudio\pandax\pandax\obj\Debug\Homepage.g.cs
+D:\pandaxstudio\pandax\pandax\obj\Debug\MainWindow.g.cs
+D:\pandaxstudio\pandax\pandax\obj\Debug\Readme.g.cs
+D:\pandaxstudio\pandax\pandax\obj\Debug\Settings.g.cs
+D:\pandaxstudio\pandax\pandax\obj\Debug\App.g.cs
+D:\pandaxstudio\pandax\pandax\obj\Debug\PandaX Studio_MarkupCompile.cache
+D:\pandaxstudio\pandax\pandax\obj\Debug\PandaX Studio_MarkupCompile.lref
+D:\pandaxstudio\pandax\pandax\obj\Debug\App.baml
+D:\pandaxstudio\pandax\pandax\obj\Debug\Appstore.baml
+D:\pandaxstudio\pandax\pandax\obj\Debug\Community.baml
+D:\pandaxstudio\pandax\pandax\obj\Debug\Documents.baml
+D:\pandaxstudio\pandax\pandax\obj\Debug\Homepage.baml
+D:\pandaxstudio\pandax\pandax\obj\Debug\MainWindow.baml
+D:\pandaxstudio\pandax\pandax\obj\Debug\Readme.baml
+D:\pandaxstudio\pandax\pandax\obj\Debug\Settings.baml
+D:\pandaxstudio\pandax\pandax\obj\Debug\PandaX Studio.g.resources
+D:\pandaxstudio\pandax\pandax\obj\Debug\pandax.Properties.Resources.resources
+D:\pandaxstudio\pandax\pandax\obj\Debug\pandax.csproj.GenerateResource.cache
+D:\pandaxstudio\pandax\pandax\obj\Debug\pandax.csproj.CoreCompileInputs.cache
+D:\pandaxstudio\pandax\pandax\obj\Debug\pandax.csproj.CopyComplete
+D:\pandaxstudio\pandax\pandax\obj\Debug\PandaX Studio.exe
+D:\pandaxstudio\pandax\pandax\obj\Debug\PandaX Studio.pdb

@@ -511,12 +511,15 @@ namespace pandax
         private void Set_btn_pandax_open_Click(object sender, RoutedEventArgs e)
         {
 
-            Process.Start(set_box_pandax_path.Text);
+            try
+            {
+                Process.Start(set_box_pandax_path.Text);
+            }
+            catch (Exception)
+            {
 
-
-
-
-
+                throw;
+            }
         }
 
         private void Set_btn_edit_path_Click(object sender, RoutedEventArgs e)
@@ -526,7 +529,190 @@ namespace pandax
 
         private void Set_btn_log_path_Click(object sender, RoutedEventArgs e)
         {
-            Process.Start("notepad.exe",set_box_log_path.Text);
+            try
+            {
+                Process.Start("notepad.exe", set_box_log_path.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Set_btn_errlog_path_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start("notepad.exe", set_box_errlog_path.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Server_install_dir_open_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(set_box_pandax_path.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Server_www_open_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(box_server_www.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Server_log_btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start("notepad.exe", box_server_log.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Server_err_log_btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start("notepad.exe", box_server_err_log.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Server_config_btn_Click(object sender, RoutedEventArgs e)
+        {
+
+            try
+            {
+                Process.Start("notepad.exe", box_server_config.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Php_path_open_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(box_php_path.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Php_tool_btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(box_php_tool.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Php_ext_path_btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(box_php_ext_path.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Php_info_btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(box_php_info.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Php_log_btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(box_php_log.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Php_err_log_btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(box_php_err_log.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Php_config_path_btn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Process.Start(box_php_config_path.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void Set_btn_browser_path_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
