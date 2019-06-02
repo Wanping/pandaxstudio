@@ -1,0 +1,213 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pandax"
+        xmlns:Forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms" x:Class="pandax.MainWindow"
+        mc:Ignorable="d"
+        Title="PandaX Studio" Height="768" Width="1366" Icon="source/image/logo.png" WindowStartupLocation="CenterScreen" Background="#FFF8F8F8" FontFamily="Microsoft YaHei UI" Loaded="Window_Loaded">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ImageBrush x:Key="Button.Static.Background" ImageSource="source/image/checked.png"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF2A333C"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FF354554"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF354554"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FF4A5D6B"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF4A5D6B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Grid Background="White">
+
+
+        <DockPanel>
+            <!--菜单-->
+            <Grid DockPanel.Dock="Top"  Background="White">
+                <Menu   HorizontalAlignment="Left"  VerticalAlignment="Center" Foreground="#FF333333" FontSize="12" Background="White"  >
+                    <MenuItem Header="文件" >
+                        <MenuItem x:Name="current_option" Header="设置" Click="Current_option_Click" />
+                        <MenuItem Header="退出" Click="Quit_Click" >
+                            <MenuItem.Icon>
+                                <Image Source="source/image/close1.PNG"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="视图" >
+                        <MenuItem x:Name="bar_tool"  Header="工具栏" Click="Bar_tool_Click">
+                            <MenuItem.Icon>
+                                <Image Source="source/image/checked.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="bar_state"  Header="状态栏" Click="Bar_state_Click" >
+                            <MenuItem.Icon>
+                                <Image Source="source/image/checked.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="if_appstore"  Header="应用市场" Click="If_appstore_Click" >
+                            <MenuItem.Icon>
+                                <Image Source="source/image/checked.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+
+                        <MenuItem x:Name="if_community"  Header="社区" Click="If_community_Click" >
+                            <MenuItem.Icon>
+                                <Image Source="source/image/checked.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                        <MenuItem x:Name="if_help"  Header="文档" Click="If_help_Click"  >
+                            <MenuItem.Icon>
+                                <Image Source="source/image/checked.png"/>
+                            </MenuItem.Icon>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="工具" >
+                        <MenuItem x:Name="backup_manager"  Header="备份管理" />
+
+                        <MenuItem  Header="导出www" Click="export_www_Click"/>
+                        <MenuItem  Header="导出全部" Click="export_all_Click"/>
+                        <MenuItem x:Name="port_manager"  Header="端口管理" Click="Port_manager_Click" />
+                        <MenuItem x:Name="log_manager"  Header="日志管理"  >
+                            <MenuItem Header="Apache"/>
+                            <MenuItem Header="Mysql"/>
+                            <MenuItem Header="PHP"/>
+                        </MenuItem>
+                        <MenuItem x:Name="config_manager"  Header="配置管理"  >
+                            <MenuItem Header="Apache"/>
+                            <MenuItem Header="Mysql"/>
+                            <MenuItem Header="PHP"/>
+                        </MenuItem>
+                    </MenuItem>
+                    <MenuItem Header="帮助" >
+                        <MenuItem x:Name="check_update"  Header="检查更新" Click="Check_update_Click"/>
+                        <MenuItem x:Name="more_link"  Header="了解更多" Click="More_link_Click"/>
+                        <MenuItem x:Name="home_link"  Header="官方网站" Click="Home_site_click"/>
+                    </MenuItem>
+
+                    <MenuItem Header="关于" Click="Aboutme_Click"/>
+                </Menu>
+            </Grid>
+            <!--工具栏-->
+            <Border DockPanel.Dock="Top" x:Name="pd_toolbar"  BorderThickness="0,1" Height="30" Background="White" BorderBrush="#FFC2C9CF">
+                <Grid Background="White" VerticalAlignment="Center">
+
+                    <ToolBar HorizontalAlignment="Left" ToolBarTray.IsLocked="True" Height="30" Margin="0,0,0,-2" VerticalAlignment="Top" Background="{x:Null}" Width="404.027">
+
+                        <Button x:Name="localhost" Content="&#xF015;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" ToolTip="打开localhost" Foreground="#FF007ACC" FontSize="10" Click="Localhost_Click"  />
+                        <Button Content="&#xf055;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" ToolTip="新建网站" FontSize="10" />
+                        <Button Content="&#xf233;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" ToolTip="服务器管理" FontSize="10" />
+                        <Button Content="&#xf1c0;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" ToolTip="数据库管理" FontSize="10" />
+
+
+                        <Separator/>
+                        <Button Content="&#xf3ed;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" FontSize="10" ToolTip="备份管理" />
+                        <Button Content="&#xf013;" Height="25"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" FontSize="10" ToolTip="设置" Click="Current_option_Click"/>
+                        <Separator/>
+                        <ComboBox  Height="25" Text="PHP" HorizontalContentAlignment="Right" FontFamily="Microsoft YaHei UI" BorderBrush="{x:Null}" Margin="0" Width="109.427" FontSize="10" IsEditable="True" HorizontalAlignment="Left" Background="#FFEEEEF2" >
+                            <ComboBoxItem Content="PHP" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left"/>
+                            <ComboBoxItem Content="Python" FontFamily="Microsoft YaHei UI" HorizontalAlignment="Left"/>
+                        </ComboBox>
+
+                    </ToolBar>
+                    <ToolBar HorizontalAlignment="Right" ToolBarTray.IsLocked="True" Background="{x:Null}" >
+                        <Button x:Name="init_path" Content="&#xf021; 刷新" Height="Auto"   FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" BorderBrush="{x:Null}" ToolTip="打开localhost"  FontSize="10" RenderTransformOrigin="0.5,0.5" Click="Init_path_Click"  >
+
+                        </Button>
+
+                    </ToolBar>
+                </Grid>
+            </Border>
+            <!--状态栏 使用border是为了设置状态栏的边框等属性-->
+            <Border x:Name="pd_statusbar" DockPanel.Dock="Bottom" BorderThickness="0,1,0,0" Height="25" Background="White" BorderBrush="#FFC2C9CF" >
+
+                <Grid  >
+                    <StatusBar  HorizontalAlignment="Left"    VerticalAlignment="Center" Background="White"  Foreground="#FF333333" FontFamily="Microsoft YaHei UI" FontStyle="Italic" VerticalContentAlignment="Center" Margin="0,2.006" Width="614.037" BorderBrush="#FF333333">
+
+                        <TextBlock x:Name="current_bro" Text="&#xF015; 主页" Foreground="#FF333333" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" MouseDown="Current_bro_MouseDown"  FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Background="{x:Null}" Margin="5,0,0,0" FontStyle="Normal" />
+                        <TextBlock x:Name="service" Text="&#xF1D8; 服务" Foreground="#FF333333" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="Service_MouseDown" FontSize="10" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Background="{x:Null}" Margin="5,0,0,0" FontStyle="Normal"  />
+                        <TextBlock x:Name="cmd" Text="&#xF2D0; 命令行" Foreground="#FF333333" HorizontalAlignment="Center" VerticalAlignment="Center" MouseDown="Cmd_MouseDown" FontSize="10" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid"  Background="{x:Null}" Margin="5,0,0,0" FontStyle="Normal" />
+                        <TextBlock x:Name="current_dir" Text="&#xF07C; 目录" Foreground="#FF333333" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" MouseDown="Current_dir_MouseDown" RenderTransformOrigin="1.932,0.491" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Background="{x:Null}" Margin="5,0,0,0" FontStyle="Normal" />
+                        <TextBlock x:Name="download_dir" Text="&#xf019; 下载" Foreground="#FF333333" HorizontalAlignment="Center" FontSize="10" MouseDown="Download_dir_MouseDown" RenderTransformOrigin="1.932,0.491" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Background="{x:Null}" Margin="5,0,0,0" VerticalAlignment="Center" FontStyle="Normal" />
+                        <TextBlock x:Name="current_dir_Copy" Text="&#xF07C; www" Foreground="#FF333333" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" MouseDown="Www_dir_MouseDown" RenderTransformOrigin="1.932,0.491" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Background="{x:Null}" Margin="5,0,0,0" FontStyle="Normal" />
+                        <TextBlock x:Name="hosts" Text="&#xf0c6; hosts" Foreground="#FF333333" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="10" MouseDown="Hosts_MouseDown" RenderTransformOrigin="1.932,0.491" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Background="{x:Null}" Margin="5,0,0,0" FontStyle="Normal" />
+                        <TextBlock x:Name="port_check" Text="&#xf540; 端口" Foreground="#FF333333" HorizontalAlignment="Center" FontSize="10" MouseDown="port_check_MouseDown" RenderTransformOrigin="1.932,0.491" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Background="{x:Null}" Margin="5,0,0,0" VerticalAlignment="Center" FontStyle="Normal" />
+                    </StatusBar>
+                    <StatusBar HorizontalAlignment="Right" VerticalAlignment="Center" Background="White" Margin="0,3.55" Width="91.272" BorderBrush="Black" FontFamily="Microsoft YaHei UI" >
+
+                        <TextBlock x:Name="version" Text="&#xF1B0; 版本号 v1.01" Foreground="#FF333333" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="10" MouseDown="Check_update_Click"  FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Background="{x:Null}" />
+
+                    </StatusBar>
+
+                </Grid>
+            </Border>
+            <!--内容-->
+            <Grid x:Name="gridMain" DockPanel.Dock="Top" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15*"/>
+                    <ColumnDefinition Width="85*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Background="#FF2A323C"  Grid.Row="0" Grid.Column="0" x:Name="nav_grid">
+                    <StackPanel>
+                        <Button Height="60" x:Name="btn_home"  Background="#FF2A333C" BorderBrush="{x:Null}" Foreground="White" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Content="&#xF015; 主    页" Click="Btn_home_Click" Style="{DynamicResource MenuButtonStyle}"/>
+                        <Button Height="60" x:Name="btn_app"  Background="#FF2A333C" BorderBrush="{x:Null}" Foreground="White" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Content="&#xF290; 应用市场" Click="Btn_app_Click" Style="{DynamicResource MenuButtonStyle}"/>
+                        <Button Height="60" x:Name="btn_doc" Background="#FF2A333C" BorderBrush="{x:Null}" Foreground="White" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Content="&#xF0F4; 文    档" Click="Btn_doc_Click" Style="{DynamicResource MenuButtonStyle}"/>
+                        <Button Height="60" x:Name="btn_com" Background="#FF2A333C" BorderBrush="{x:Null}" Foreground="White" FontFamily="/PandaX Studio;component/source/font/#Font Awesome 5 Free Solid" Content="&#xF1D8; 社    区" Click="Btn_com_Click" Style="{DynamicResource MenuButtonStyle}"/>
+                    </StackPanel>
+                </Grid>
+                <GridSplitter Width="1" Background="#FF1090FB"  />
+                <Grid Background="#FFF9F9F9"  Grid.Row="0" Grid.Column="1">
+                    <Frame x:Name="frame" Source="Homepage.xaml"  NavigationUIVisibility="Hidden"/>
+                </Grid>
+            </Grid>
+            
+
+        </DockPanel>
+    </Grid>
+</Window>

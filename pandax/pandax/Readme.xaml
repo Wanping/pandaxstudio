@@ -1,0 +1,27 @@
+﻿<Window x:Class="pandax.Readme"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pandax"
+        mc:Ignorable="d"
+        Title="关于" Height="350" Width="500" Icon="source/image/logo.png" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="107*"></RowDefinition>
+            <RowDefinition Height="127*"></RowDefinition>
+            <RowDefinition Height="86*" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" Content="PandaX Studio" HorizontalAlignment="Left" Margin="182,40,0,0" VerticalAlignment="Top" Height="55" Width="264" FontSize="36" Background="{x:Null}" BorderBrush="{x:Null}"/>
+        <TextBlock   Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Left" Margin="92,9.8,0,0" VerticalAlignment="Top" Height="109" Width="354" TextWrapping="Wrap" FontFamily="Microsoft YaHei UI"><Run Text="P"/><Run Text="andax "/><Run Text="S"/><Run Text="tudio 是免费开源的软件工具，遵循GPL开源许可证。&#xA;作者：李向龙"/><LineBreak/><Run Text="Q Q"/><Run Text="："/><Run Text="2535571680"/><LineBreak/><Run Text="微信"/><Run Text="："/><Run Text="18503083180"/><Run Text="&#xA;邮箱：aboutlong@qq.com&#xA;"/><Run Text="运营"/><Run Text="：深圳尊信科技有限公司"/><LineBreak/><Run Text="网站：http://www.pandaxstudio.com"/></TextBlock>
+        <Label Grid.Column="0" Grid.Row="0"  HorizontalAlignment="Left" Margin="109,42,0,0" VerticalAlignment="Top" Height="55" Width="68" FontSize="36">
+            <Label.Background>
+                <ImageBrush ImageSource="source/image/logo.png"/>
+            </Label.Background>
+        </Label>
+
+    </Grid>
+</Window>

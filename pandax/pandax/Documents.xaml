@@ -1,0 +1,143 @@
+﻿<Page x:Class="pandax.Documents"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:pandax"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Documents">
+    <Page.Resources>
+        <ContextMenu x:Key="cmButton_1" >
+            <MenuItem x:Name="install_service_1" Header="安装服务"  />
+            <MenuItem Header="卸载服务" />
+            <MenuItem x:Name="op_apache_conf_click" Header="Apache配置文件"  />
+            <MenuItem Header="日志" />
+            <Separator />
+            <MenuItem x:Name="delete_card_1" Header="删除卡片" Click="Delete_card_Click"  />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_2">
+            <MenuItem x:Name="install_service_2" Header="安装服务"  />
+            <MenuItem Header="卸载服务" />
+            <Separator />
+            <MenuItem x:Name="op_mysql_conf_click" Header="MYSQL配置文件"  />
+            <MenuItem Header="MySQL目录" />
+            <MenuItem Header="日志" />
+            <Separator />
+            <MenuItem x:Name="delete_card_2" Header="删除卡片" Click="Delete_card_Click" />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_3">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+            <Separator />
+            <MenuItem x:Name="delete_card_3" Header="删除卡片" Click="Delete_card_Click" />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_4">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+            <MenuItem Header="Composer"  />
+            <Separator />
+            <MenuItem x:Name="delete_card_4" Header="删除卡片" Click="Delete_card_Click" />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_5">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+            <Separator />
+            <MenuItem x:Name="delete_card_5" Header="删除卡片" Click="Delete_card_Click"  />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_6">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+            <Separator />
+            <MenuItem x:Name="delete_card_6" Header="删除卡片"  Click="Delete_card_Click"/>
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_7">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+            <Separator />
+            <MenuItem x:Name="delete_card_7" Header="删除卡片" Click="Delete_card_Click"  />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_8">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+            <Separator />
+            <MenuItem x:Name="delete_card_8" Header="删除卡片" Click="Delete_card_Click" />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_9">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+
+            <Separator />
+            <MenuItem x:Name="delete_card_9" Header="删除卡片" Click="Delete_card_Click" />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_10">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+
+            <Separator />
+            <MenuItem x:Name="delete_card_10" Header="删除卡片" Click="Delete_card_Click" />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_11">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+
+            <Separator />
+            <MenuItem x:Name="delete_card_11" Header="删除卡片" Click="Delete_card_Click" />
+        </ContextMenu>
+        <ContextMenu x:Key="cmButton_12">
+            <MenuItem Header="官网" />
+            <MenuItem Header="文档" />
+            <MenuItem Header="社区" />
+
+            <Separator />
+            <MenuItem x:Name="delete_card_12" Header="删除卡片" Click="Delete_card_Click" />
+        </ContextMenu>
+    </Page.Resources>
+    <Grid >
+
+        <ScrollViewer x:Name="sv_doc" Margin="0" VerticalScrollBarVisibility="Auto">
+            <WrapPanel x:Name="wrap_doc" HorizontalAlignment="Left"  Margin="5,5,0,0" VerticalAlignment="Top"  Background="#FFF9F9F9" Orientation="Horizontal">
+                <Grid Background="White" Height="200"  Width="250" Margin="2" MouseEnter="Grid_Effect_MouseEnter" MouseLeave="Grid_Effect_MouseLeave" >
+                    <Image  HorizontalAlignment="Left" Height="88" Margin="78.3,24.6,0,0" VerticalAlignment="Top" Width="78.4" Source="source/image/mukewang.png" RenderTransformOrigin="0.528,0.348" >
+
+                    </Image>
+                    <TextBlock   Margin="97.745,128.02,112.745,56.02" HorizontalAlignment="Center" VerticalAlignment="Center" Text="慕课网"  />
+                    <Button x:Name="doc_1"  Content="打开" HorizontalAlignment="Left" Margin="70,156.6,0,0" VerticalAlignment="Top" Width="95" Background="#FFF5F6F7" Click="Doc_1_Click"/>
+                </Grid>
+                <Grid Background="White" Height="200"  Width="250" Margin="2" MouseEnter="Grid_Effect_MouseEnter" MouseLeave="Grid_Effect_MouseLeave" >
+                    <Image  HorizontalAlignment="Left" Height="95.2" Margin="70,19.8,0,0" VerticalAlignment="Top" Width="100" Source="source/image/apache.jpg" RenderTransformOrigin="0.528,0.348" >
+
+                    </Image>
+                    <TextBlock   Margin="70,120,85,48" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Apache"  />
+                    <Button x:Name="doc_2" Content="打开" HorizontalAlignment="Left" Margin="70,156.6,0,0" VerticalAlignment="Top" Width="95" Background="#FFF5F6F7" Click="Doc_2_Click"/>
+                </Grid>
+                <Grid Background="White" Height="200"  Width="250" Margin="2" MouseEnter="Grid_Effect_MouseEnter" MouseLeave="Grid_Effect_MouseLeave" >
+                    <Image  HorizontalAlignment="Left" Height="100" Margin="70,15,0,0" VerticalAlignment="Top" Width="100" Source="source/image/mysql.png" RenderTransformOrigin="0.528,0.348" />
+                    <TextBlock  Margin="70,120,85,48" HorizontalAlignment="Center" VerticalAlignment="Center" Text="MySQL"  />
+                    <Button x:Name="doc_3" Content="打开" HorizontalAlignment="Left" Margin="75,158.2,0,0" VerticalAlignment="Top" Width="95" Background="#FFF5F6F7" Click="Doc_3_Click"/>
+                </Grid>
+                <Grid Background="White" Height="200"  Width="250" Margin="2" MouseEnter="Grid_Effect_MouseEnter" MouseLeave="Grid_Effect_MouseLeave" >
+                    <Image  HorizontalAlignment="Left" Height="94.4" Margin="75,20.6,0,0" VerticalAlignment="Top" Width="95" Source="source/image/php.png" RenderTransformOrigin="0.528,0.348" />
+                    <TextBlock Margin="70,120,85,48" HorizontalAlignment="Center" VerticalAlignment="Center"  Text="PHP"   />
+                    <Button x:Name="doc_4" Content="打开" HorizontalAlignment="Left" Margin="75,159,0,0" VerticalAlignment="Top" Width="95" Background="#FFF5F6F7" Click="Doc_4_Click"/>
+                </Grid>
+                <Grid Background="White" Height="200"  Width="250" Margin="2" MouseEnter="Grid_Effect_MouseEnter" MouseLeave="Grid_Effect_MouseLeave" >
+                    <Image  HorizontalAlignment="Left" Height="78.4" Margin="83.4,31,0,0" VerticalAlignment="Top" Width="78.2" Source="source/image/thinkphp.png" RenderTransformOrigin="0.528,0.348" />
+                    <TextBlock Margin="97.151,128.02,102.151,56.02" HorizontalAlignment="Center" VerticalAlignment="Center"  Text="ThinkPHP"   />
+                    <Button x:Name="doc_5" Content="打开" HorizontalAlignment="Left" Margin="75,159,0,0" VerticalAlignment="Top" Width="95" Background="#FFF5F6F7" Click="Doc_5_Click"/>
+                </Grid>
+
+
+            </WrapPanel>
+        </ScrollViewer>
+    </Grid>
+</Page>
